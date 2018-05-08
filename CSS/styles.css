@@ -1,0 +1,610 @@
+/* Global Styling (applies to all devices) */
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Site-Wrap establishes max-width and also sets up the page to do the transform effects once fixed-nav is applied via JS */
+
+.site-wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 0;
+  text-align: justify;
+  -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.fixed-nav .site-wrap {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+body {
+  font: 16px/1.4em "Libre Franklin", sans-serif;
+  color: #1c1c1c;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Image border effect applied to entire page. */
+
+img {
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Come-in and already-visible, as well as the @keyframes rule, bring up the individual portfolio boxes.
+  TO-DO: decide whether to omit effect or switch to a more performant and visually appealing one, such as
+  a slide-in from the left or right, or even an animation on the images and a reveal effect on the text
+  when the user scrolls to each portfolio box section. */
+
+.come-in {
+  -webkit-transform: translateY(200px);
+  transform: translateY(200px);
+  -webkit-animation: come-in 1s ease forwards;
+  animation: come-in 1s ease forwards;
+}
+
+.already-visible {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-animation: none;
+  animation: none;
+}
+
+@-webkit-keyframes come-in {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes come-in {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* After the navigation bar, the first section is the dominant image and intro text, separated into two sections: left and right. */
+
+.left {
+  width: calc(100% - 10px);
+  max-width: 575px;
+  padding: 30px;
+  font-family: "Eczar", serif;
+  text-align: justify;
+  margin: 0 auto;
+}
+
+.left h2 {
+  color: white;
+  text-shadow: 2px 2px 7px #000;
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.left p {
+  font-size: 20px;
+}
+
+/* The right section isn't visible on smaller devices and is used later for a hi-res version of the left's image. */
+
+.right {
+  display: none;
+}
+
+/* The next section is a header of sorts for the portfolio section. */
+
+.port-text {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.port-text h2 {
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+.port-text h3 a {
+  color: #000;
+}
+
+/* Next up is the actual portfolio section, which includes each portfolio item's image, a description, and a link.
+Each image also acts as a link to my external site. */
+
+section#portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: calc((100% - 200px) / 3);
+}
+
+#boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.port-img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.box-content a, .box-content h4, .box-content p {
+  width: 80%;
+  text-align: center;
+  font-weight: normal;
+  margin: 15px auto;
+}
+
+.git-link {
+  color: #6e5494;
+  text-decoration: none;
+  padding: 15px;
+  padding-left: 3px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+article {
+  border-bottom: 1px solid #d8d8d8;
+  margin: 0;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  height: 30vh;
+  background: url(../images/javascript.jpg) bottom center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /* alt attribute left out because header background image is purely aesthetic and conveys no data. */
+}
+
+.logo-top {
+  font-size: 1.9em;
+  color: #fff;
+  position: absolute;
+  top: 320px;
+  left: 32px;
+  font-family: "Eczar", serif;
+}
+
+/* Navigation */
+
+nav {
+  background: #fff;
+  top: 0;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+  min-width: 100%;
+}
+
+body.fixed-nav nav {
+  position: fixed;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nav-logo a {
+  background: #000;
+}
+.name-first:before {
+  content: "DruNken";
+  font-size: 18px;
+  text-transform: none;
+  color: #fff;
+}
+
+.name-sec:before {
+  content: "KisMet";
+  font-size: 20px;
+  text-transform: none;
+  color: #fff;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 50px;
+}
+
+nav li {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+}
+
+nav a:hover {
+  color: rgba(50, 50, 50, 0.7);
+  font-size: 1.025em;
+  text-shadow: 1px 1px 0.5px #000;
+}
+
+nav a:active {
+  outline: none;
+  color: #000;
+  font-size: inherit;
+  text-shadow: none;
+}
+
+li.nav-logo {
+  max-width: 0;
+  max-height: 50px;
+  overflow: hidden;
+  background: #fff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+li.nav-logo a {
+  color: #000;
+  width: 100%;
+}
+
+li.nav-logo a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.fixed-nav li.nav-logo {
+  max-width: 500px;
+}
+
+/* Footer */
+
+footer {
+  font-size: 14px;
+  padding: 10px;
+}
+
+footer p {
+  text-align: center;
+}
+
+section.footer-social {
+  max-width: 75%;
+  margin: 0 auto;
+	display: grid;
+  grid-template-areas: "h h h h"
+                       "f t g l";
+}
+
+.footer-social h2 {
+  text-align: center;
+  grid-area: h;
+  margin: 0 0 10px 0;
+}
+
+.facebook {
+  grid-area: f;
+}
+
+.twitter {
+  grid-area: t;
+}
+
+.github {
+  grid-area: g;
+}
+
+.linkedin {
+  grid-area: l;
+}
+
+section.footer-social a {
+  color: #000;
+	width: 40px;
+	height: 40px;
+	font-size: 25px;
+	margin-right: 10px;
+	padding-top: 15%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.validation {
+  max-width: 65%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "vh vh"
+                       "h c";
+}
+
+.validation h2 {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  grid-area: vh;
+}
+
+.css-v {
+  grid-area: c;
+}
+
+.html-v {
+  grid-area: h;
+}
+
+section.validation p a img {
+  border: 0;
+  width: 88px;
+  height: 31px;
+}
+
+/* Parallax Effects */
+
+.parallax {
+  background-image: url("../images/javascript.jpg");
+  height: 250px;
+  background-attachment: fixed !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  /* alt attribute left off parallax image because it is purely aesthetic and conveys no relevant data */
+}
+
+@media screen and (max-width: 728px) {
+
+  header {
+    height: 25vh;
+  }
+
+  .logo-top {
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #fff;
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    font-family: "Eczar", serif;
+    margin: 0;
+  }
+
+  .site-wrap {
+    width: 100%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    margin: 0;
+    padding: 0;
+  }
+
+  .parallax {
+    height: 250px;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 0.7em;
+    max-height: 48px;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  li.nav-logo a {
+    padding: 0;
+  }
+
+  .name-first:before {
+    font-size: 14px;
+    display: block;
+  }
+
+  .name-sec:before {
+    font-size: 14px;
+    display: block;
+  }
+
+  a.name-first, a.name-sec {
+    line-height: 80%;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .intro {
+    display: block;
+  }
+
+  .intro .intro-top {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .intro-top img {
+    width: 100%;
+  }
+
+  .left {
+    width: 90%;
+    padding: 5px;
+    margin: 0 auto;
+  }
+
+  .left p, p {
+    font-size: 14px;
+  }
+
+  .right {
+    display: none;
+  }
+
+  section#portfolio {
+    display: block;
+    width: 100%;
+    height: calc((100% - 200px) / 6);
+  }
+
+  div.box-content.already-visible.come-in {
+    padding-bottom: 10px;
+  }
+
+  div.port-text {
+    border-bottom: 1px solid rgba(13, 13, 13, 0.2);
+  }
+
+  div.port-text > * {
+    margin: 10px 0;
+  }
+
+  .box {
+    border: none;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.2);
+  }
+
+  #boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .port-img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 0;
+  }
+
+  .box-content > * {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    width: 80%;
+  }
+
+  a.git-link {
+    font-size: 1.1em;
+    padding: 10px;
+    padding-left: 3px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1167px) {
+
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+
+  .intro .intro-top {
+    display: none;
+  }
+
+  .left {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    text-align: justify;
+  }
+
+  .left h2 {
+    font-family: "Eczar", serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .left h3 {
+    font-family: "Eczar", serif;
+    font-size: 28px;
+  }
+
+  .right {
+    display: block;
+    max-width: calc(100% - 10px);
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+
+  #boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
