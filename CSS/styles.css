@@ -67,7 +67,7 @@ img.logo-img {
 /* Come-in and already-visible, as well as the @keyframes rule, bring up the individual portfolio boxes.
   TO-DO: decide whether to omit effect or switch to a more performant and visually appealing one, such as
   a slide-in from the left or right, or even an animation on the images and a reveal effect on the text
-  when the user scrolls to each portfolio box section. */
+  when the user scrolls to each portfolio box section. Couresy of Wes Bos's JavaScript 30 course. */
 
 .come-in {
   -webkit-transform: translateY(200px);
@@ -226,15 +226,6 @@ header {
   -ms-flex-pack: center;
   justify-content: center;
   /* alt attribute left out because header background image is purely aesthetic and conveys no data. */
-}
-
-.logo-top {
-  font-size: 1.9em;
-  color: #fff;
-  position: absolute;
-  top: 320px;
-  left: 32px;
-  font-family: "Eczar", serif;
 }
 
 /* Navigation */
@@ -458,6 +449,13 @@ section.validation p a img {
 
 @media screen and (max-width: 728px) {
 
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
   header {
     height: 25vh;
   }
@@ -498,13 +496,6 @@ section.validation p a img {
 
   a.name-first, a.name-sec {
     line-height: 80%;
-  }
-
-  body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
   }
 
   .intro {
@@ -552,13 +543,13 @@ section.validation p a img {
     margin: 10px 0;
   }
 
-  .box {
-    border: none;
-  }
-
   #boxes {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  
+  .box {
+    border: none;
   }
 
   .port-img {
