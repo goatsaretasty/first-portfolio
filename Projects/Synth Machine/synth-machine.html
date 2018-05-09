@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple JavaScript Synth Machine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1>Eminem's Synth Machine</h1>
+      <h2>featuring: bass by Dr. Dre</h2>
+      <p>Use your 10-key numpad, mouse or touch (on mobile).</p>
+    </header>
+    <form class="keys">
+      <div id="sen-row">
+        <button id="7" data-key="103" class="key seven">
+          <kbd>7</kbd>
+          <span class="sound">snare-clap</span>
+        </button>
+        <button id="8" data-key="104" class="key eight">
+          <kbd>8</kbd>
+          <span class="sound">synth</span>
+        </button>
+        <button id="9" data-key="105" class="key nine">
+          <kbd>9</kbd>
+          <span class="sound">hi-hat light</span>
+        </button>
+      </div>
+      <div id="ffs-row">
+        <button id="4" data-key="100" class="key four">
+          <kbd>4</kbd>
+          <span class="sound">hi-hat</span>
+        </button>
+        <button id="5" data-key="101" class="key five">
+          <kbd>5</kbd>
+          <span class="sound">kick</span>
+        </button>
+        <button id="6" data-key="102" class="key six">
+          <kbd>6</kbd>
+          <span class="sound">snare</span>
+        </button>
+      </div>
+      <div id="ott-row">
+        <button id="1" data-key="97" class="key one">
+          <kbd>1</kbd>
+          <span class="sound">bass drum high</span>
+        </button>
+        <button id="2" data-key="98" class="key two">
+          <kbd>2</kbd>
+          <span class="sound">bass strings</span>
+        </button>
+        <button id="3" data-key="99" class="key three">
+          <kbd>3</kbd>
+          <span class="sound">clap</span>
+        </button>
+      </div>
+      <div id="zero-row">
+        <button id="0" data-key="96" class="key zero">
+          <kbd>0</kbd>
+          <span class="sound">bass drum low</span>
+        </button>
+      </div>
+    </form>
+
+    <audio data-key="96" src="sounds/bd.wav"></audio>
+    <audio data-key="97" src="sounds/bd2.wav"></audio>
+    <audio data-key="98" src="sounds/bdstrings.wav"></audio>
+    <audio data-key="99" src="sounds/clap.wav"></audio>
+    <audio data-key="100" src="sounds/hihat.wav"></audio>
+    <audio data-key="101" src="sounds/kick.wav"></audio>
+    <audio data-key="102" src="sounds/snare.wav"></audio>
+    <audio data-key="103" src="sounds/snare2.wav"></audio>
+    <audio data-key="104" src="sounds/synth.wav"></audio>
+    <audio data-key="105" src="sounds/hihat3.wav"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

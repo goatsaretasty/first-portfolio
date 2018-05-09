@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Cutive Mono", monospace;
+  background: var(--sup-color);
+}
+:root {
+  --main-color: #cda592;
+  --sup-color: #FBF4EE;
+}
+.container > * {
+  color: var(--main-color);
+  padding: 10px;
+  display: grid;
+  font-size: 1.5em;
+  margin: auto;
+}
+aside#walkthrough {
+  position: absolute;
+  margin: 0;
+  top: 10%;
+  left: 30%;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  width: 40%;
+}
+#walkthrough p {
+  background: #fff;
+  color: salmon;
+}
+#walkthrough > * {
+  font-size: 1.2em;
+  padding: 10px;
+}
+#walkthrough button {
+  margin: 10px auto 10px auto;
+}
+#walkthrough button:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    font-size: 1.2em;
+  }
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.hidden {
+  display: none;
+}
+.navbar {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5px;
+  justify-items: center;
+  background: salmon;
+}
+.navbar a, .to-home {
+  color: white;
+  background: salmon;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+}
+.navbar a:hover, .to-home:hover{
+  color: var(--main-color);
+  background: white;
+  transform: scale(1.2);
+  transform: rotate(-2deg);
+  box-shadow: 0 0 1px #719ece;
+}
+header {
+  text-align: center;
+}
+p > * {
+  font-size: 2.1em;
+}
+hr {
+  height: 1px;
+  padding: 0;
+  border-top: 0.5px solid var(--main-color);
+}
+.first-letter {
+  font-size: 2.4em;
+  color: white;
+  text-shadow: 2px 2px 4px var(--main-color);
+}
+#button-pane {
+  display: grid;
+  grid-row-gap: 4px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: repeat(40px, 1fr);
+  justify-items: center;
+  margin-bottom: 15px;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  padding: 5px 0;
+  width: 100%;
+  background: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: .65;
+}
+#two-d-palette, #three-d-palette, .controls, div[id^="variable"] {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-row-gap: 8px;
+  grid-auto-rows: repeat(30px, 1fr);
+  margin: 4px;
+}
+input[class*="text"] {
+  color: var(--main-color);
+  border: .5px solid white;
+  width: 175px;
+  padding: 5px;
+}
+.white {
+  background: white;
+}
+input[class*="text"]:focus {
+  outline: 0;
+  border: 1px solid white;
+  box-shadow: 0 0 1px #719ece;
+}
+.white {
+  background: white;
+}
+.warning {
+  background: #FEEFB3;
+}
+label {
+  text-align: center;
+  font-size: 1.25em%;
+}
+button {
+  background: salmon;
+  color: white;
+  border: none;
+  height: 100%;
+  width: 180px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 1;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+button:hover {
+  color: var(--main-color);
+  background: white;
+  transform: scale(1.2);
+  transform: rotate(-2deg);
+  box-shadow: 0 0 1px #719ece;
+}
+.main {
+  display: grid;
+  justify-content: center;
+}
+#canvas {
+  background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	cursor: crosshair;
+}
+@supports (display: grid) {
+  .container > * {
+    width: auto;
+    margin: 0;
+  }
+}
+table, tr, td {
+  border: 1px solid var(--main-color);
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 10px;
+  grid-column: 2 / -1;
+}
+tr {
+  height: 20px;
+}
+td {
+  width: 20px;
+}
+@media screen and (max-width: 645px) {
+  .container {
+    display: grid;
+  }
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .navbar a {
+    width: 80px;
+  }
+}
+.Lessons {
+  padding: 30px;
+}
+.lessons > * {
+  margin: 0 auto;
+}
+article.lessons > p {
+  text-align: left;
+  width: 500px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+#start-over-4 {
+  text-align: center;
+  width: 75px;
+}

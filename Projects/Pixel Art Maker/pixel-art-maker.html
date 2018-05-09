@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Pixel Art Maker</title>
+  </head>
+  <body>
+    <aside id="walkthrough" class="hidden">
+      <p>Welcome to Pixel Art Maker (PAM for short)!</p>
+      <p>The Paint 2D option allows you to specify the height and width of a grid, and then draw on it by picking from the provided palette. You can click and drag to color cells, and erase using your mouse's right-click functionality.</p>
+      <p>To clear a grid but keep its width and height, click the Clear Grid button.</p>
+      <p>To draw a new grid, simly re-enter the columns and rows, and then click Draw It! again.</p>
+      <p>Pixy Paint is a simple paint canvas where you can pick a color and brush size to create your next masterpiece.</p>
+      <p>To get started, click below!</p>
+      <button id="begin" type="button">Start</button>
+    </aside>
+    <div class="container" style="display: none;">
+      <nav class="navbar">
+        <a href="https://codepen.io/drunkenkismet/pen/mxMgog" target="_blank" id="codepen">Codepen</a>
+        <a href="https://codepen.io/drunkenkismet/pen/RMjpdY" target="_blank" id="lessons">Lessons</a>
+      </nav>
+      <header class="header">
+        <p id="header-p"><span class="first-letter">P</span>ixel <span class="first-letter">A</span>rt <span class="first-letter">M</span>aker</p>
+        <hr>
+      </header>
+      <aside id="sidebar">
+        <!-- Main Art Option pane, to choose from 2D, 3D, or a simple Canvas paint element. -->
+        <div id="button-pane">
+          <button id="button-1">Paint 2D</button>
+          <button id="button-2" class="tooltip" disabled>CBN<span class="tooltiptext">This feature is coming soon!</span></button>
+          <button id="button-3">Pixy Paint</button>
+        </div>
+            <!-- 2D Palette tools -->
+        <form id="two-d-palette" action="#" style="display: none;">
+          <input class='text-input-1 white' type='number' placeholder="How many columns?" min="1" max="50" required>
+          <input class='text-input-2 white' type='number' placeholder="How many rows?" min="1" max="50" required>
+          <label id='color-picker-1' for="pick-a-color-1">Pick A Color</label>
+          <input class="pick-a-color-1" type='color' value='#452100'>
+          <button id="submit-1" type="submit">Draw It!</button>
+          <button id="refresh" type="button" style="display: none;">Clear Grid</button>
+          <button id="save" type="button" style="display: none;">Save Art</button>
+        </form>
+          <!-- Paint by Numbers tools. TBD. -->
+        <!-- <form id="paintByNumbers" style="display: none;">
+          <select id="pBNSelect">
+            <option id="#">
+            <option id="#">
+            <option id="#">
+            <option id="#">
+          </select>
+          <button type="submit" id="pBNSubmit">Let's Paint!</button>
+          <button type="button id="save-2">Save Art</button>
+          <button type="button" id="variable-restart-3>Home</button>
+        </form> -->
+          <!-- Painting Palette tools -->
+        <form class="controls" action="#" style="display: none;">
+          <label id="color-label" for="color-panel">Pick A Color</label>
+          <input type="color" class="color-panel">
+          <label id="brush-label">Brush Thickness</label>
+          <input class="slider" type="range" min="1" max="60" value="1">
+          <button id="canvasRefresh" type="button">Clear</button>
+          <button id="save-2" type="button" style="display: none;">Save Art</button>
+        </form>
+        <!-- 3 buttons that initiate resetting the button pane to visible and hide irrelevant elements. -->
+        <div id="variable-restart-1" style="display: none;">
+          <button id='start-over-1'>Home</button>
+        </div>
+        <!-- This one isn't used quite yet. -->
+        <div id="variable-restart-2" style="display: none;">
+          <button id='start-over-2'>Home</button>
+        </div>
+        <div id="variable-restart-3" style="display: none;">
+          <button id='start-over-3'>Home</button>
+        </div>
+      </aside>
+      <!-- Main canvas area, with three hidden areas triggered by event listeners on the initial button pane, such as start-over-1, etc. Note that three-d-canvas isn't functioning yet. -->
+      <article class="main">
+        <table id="two-d-grid" style="display: none;">
+        </table>
+        <div id="three-d-canvas" style="display: none;">
+        </div>
+        <div id="canvas-div" style="display: none;">
+          <canvas id="canvas" width="600px" height="500px"></canvas>
+        </div>
+      </article>
+    </div>
+      <script src="js/designs.js"></script>
+    </div>
+  </body>
+</html>
