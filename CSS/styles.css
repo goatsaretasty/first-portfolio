@@ -1,6 +1,8 @@
 /* Global Styling (applies to all devices) */
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
@@ -172,7 +174,9 @@ section#portfolio {
   margin-bottom: 10px;
 }
 
-.box-content a, .box-content h4, .box-content p {
+.box-content a,
+.box-content h4,
+.box-content p {
   width: 80%;
   text-align: center;
   font-weight: normal;
@@ -198,7 +202,8 @@ section#about {
   text-align: center;
 }
 
-#about h2, #about p {
+#about h2,
+#about p {
   margin: 10px 0;
   padding: 0;
   width: 100%;
