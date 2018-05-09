@@ -1,3 +1,8 @@
+/* Element Onscreen Visibility Checker. Used in combination with .parallax class in CSS.
+   The following visible-viewport checker from https://github.com/customd/jquery-visible
+   - Used for the parallax effect on markup. */
+//
+
 (function($) {
 
     /**
@@ -27,7 +32,13 @@
   };
 
 })(jQuery);
-
+//
+/* End Element Onscreen Visibility checker */
+//
+/* Navigation Menu, Sticky Nav, adapted from Wes Bos's JavaScript 30 course. The first portion
+   brings elements into view based on scroll position, and the last portion creates an effect
+   on the navigation bar based on scroll position. */
+//
 let win = $(window);
 let allMods = $(".box-content");
 
@@ -46,8 +57,6 @@ win.scroll(function(event) {
     }
   });
 });
-
-// Navigation Menu
 
 const nav = document.getElementById('navigation');
 let topOfNav = nav.offsetTop;
