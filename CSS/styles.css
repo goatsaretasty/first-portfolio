@@ -19,11 +19,11 @@ html {
   margin: 20px auto;
   background: #fff;
   padding: 0;
-  text-align: justify;
+  text-align: left;
   -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -104,13 +104,11 @@ img.logo-img {
   max-width: 575px;
   padding: 30px;
   font-family: "Eczar", serif;
-  text-align: justify;
   margin: 0 auto;
 }
 
 .left h2 {
-  color: white;
-  text-shadow: 2px 2px 7px #000;
+  color: #000;
   font-size: 38px;
   font-weight: 700;
   text-align: center;
@@ -131,6 +129,7 @@ p {
 .port-text {
   display: block;
   width: 100%;
+  margin-top: 20px;
   padding: 10px;
   text-align: center;
 }
@@ -366,6 +365,11 @@ section.footer-social {
   max-width: 75%;
   margin: 0 auto;
 	display: grid;
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
   grid-template-areas: "h h h h"
                        "f t g l";
 }
@@ -376,6 +380,14 @@ section.footer-social {
   margin: 0 0 10px 0;
 }
 
+.facebook,
+.twitter,
+.github,
+.linkedin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .facebook {
   grid-area: f;
 }
@@ -547,7 +559,7 @@ section.validation p a img {
     display: grid;
     grid-template-columns: 1fr;
   }
-  
+
   .box {
     border: none;
   }
@@ -598,7 +610,7 @@ section.validation p a img {
     width: 90%;
     padding: 10px;
     margin: auto;
-    text-align: justify;
+    text-align: left;
   }
 
   .left h2 {
