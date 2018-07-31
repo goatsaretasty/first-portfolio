@@ -24,6 +24,5 @@ I'm still relatively new to FEND. If you'd like to suggest changes, please, do s
 
 This project adheres strictly to the MIT license. If you use any part of it, simple attribution is all that's required. 
 
-## Drunkenkismet Logo
 
 
