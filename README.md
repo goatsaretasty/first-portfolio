@@ -8,7 +8,7 @@ Over the course of the FEND program, students complete a variety of labs and pro
 
 The focus of the portfolio, though, is the construction of a resource that employs responsiveness. This includes considerations of breakpoints and responsive images through media queries. Additionally, it serves as a "proof-in-the-pudding" as to a student's knowledge of markup, ARIA compliance, styling, adherence to Udacity's style guide, and the introductory scripting techniques taught up to that point in the program.
 
-## Structure and DEployment
+## Structure and Deployment
 
 This project employs the standard `index.html`, `styles.css` and `scripts.js` files, as well as this accompanying README.md file. 
 
